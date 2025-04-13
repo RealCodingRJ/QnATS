@@ -23,6 +23,7 @@ if (randomQuestions == "Favorite Color") {
         if (answer == "Green | Blue") {
             CorrectMessage();
             DB("https://localhost:27017", answer).then((e) => e);
+            DB("http://localhost:27017", "Correct").then((e) => e);
         }
     })
 }
@@ -32,6 +33,7 @@ if (randomQuestions == "Birthday") {
         if (answer == "11/17") {
             CorrectMessage();
             DB("https://localhost:27017", answer).then((e) => e);
+            DB("http://localhost:27017", "Correct").then((e) => e);
         }
     })
 }
@@ -41,7 +43,8 @@ if (randomQuestions == "Name") {
         if (answer == "Ryan G") {
             CorrectMessage();
             DB("https://localhost:27017", answer).then((e) => e);
-            
+            DB("http://localhost:27017", "Correct").then((e) => e);
+
         }
     })
 }
