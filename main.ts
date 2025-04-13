@@ -1,6 +1,7 @@
 import  * as readline from 'readline';
 import { Question } from "./Questions/Questions";
 import {DB} from "./DB/DB";
+import {GetAnswers} from "./ListofAnswers/ListofAnswers";
 
 const IO = readline.createInterface(({
     input: process.stdin,
@@ -24,6 +25,10 @@ if (randomQuestions == "Favorite Color") {
             CorrectMessage();
             DB("https://localhost:27017", answer).then((e) => e);
             DB("http://localhost:27017", "Correct").then((e) => e);
+        } else {
+            const rs = GetAnswers("Green | Blue");
+            DB("http://localhost:27017", rs).then((e) => e);
+
         }
     })
 }
@@ -35,6 +40,11 @@ if (randomQuestions == "Birthday") {
             DB("https://localhost:27017", answer).then((e) => e);
             DB("http://localhost:27017", "Correct").then((e) => e);
         }
+
+        else {
+            const rs = GetAnswers("11/17");
+            DB("https://localhost:27017", rs).then((e) => e);
+        }
     })
 }
 
@@ -45,6 +55,11 @@ if (randomQuestions == "Name") {
             DB("https://localhost:27017", answer).then((e) => e);
             DB("http://localhost:27017", "Correct").then((e) => e);
 
+        }
+
+        else {
+            const rs = GetAnswers("Ryan G");
+            DB("https://localhost:27017", rs).then((e) => e);
         }
     })
 }
